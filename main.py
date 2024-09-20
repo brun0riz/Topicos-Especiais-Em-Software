@@ -56,7 +56,7 @@ def coletar_caracteristicas(driver, link_produto):
 
     try:
         caracteristicas = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, 'ProductSpecifications_classNameOuElemento'))
+            EC.presence_of_element_located((By.CLASS_NAME, 'DetailsContent_MasonryColumn__RTZdN'))
         )
         return caracteristicas.text
     except Exception as e:
@@ -72,10 +72,6 @@ def salvar_em_arquivo(dados):
             arquivo.write(f"Link: {produto[2]}\n")
             arquivo.write(f"Configurações:\n{produto[3]}\n")
             arquivo.write("-" * 50 + "\n")
-
-
-def descricao():
-    
 
 
 driver = webdriver.Chrome()
